@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="css/index.css">
+   <script src="js/index.js" defer></script>  <!-- defer : 로딩순서를 바꾼다(body부터 읽음).-->
+</head>
+<body>
+   <h2>깃허브 블로그</h2>
+   <a href="save.html">회원가입</a>
+   <button onclick="goLogin()">로그인</button>
+   <button onclick="fun1()">함수호출</button>
+</body>
+<script>
+   const goLogin = () => {
+      location.href = "login.html";
+   }
+</script>
+</html>
