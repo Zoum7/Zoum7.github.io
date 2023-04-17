@@ -1,22 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-   <link rel="stylesheet" href="css/index.css">
-   <script src="js/index.js" defer></script>  <!-- defer : 로딩순서를 바꾼다(body부터 읽음).-->
+   <title>Zoum Portfolio</title>
+   <script src="js/index.js" defer></script> <!-- defer : 로딩순서를 바꾼다(body부터 읽음).-->
+   <link rel="stylesheet" href="./css/bootstrap.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+   <script src="./js/bootstrap.bundle.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
 </head>
+<style>
+   *:has(.full) {
+      background-color: rgb(33, 33, 33);
+      font-family: 'Jua', sans-serif;
+      text-align: center;
+      width: 1200px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+   }
+   
+
+   body {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+   }
+
+   #menu {
+      font-size: 22px;
+      list-style: none;
+      top: 0;
+      padding-top: 50px;
+   }
+
+   a {
+      text-decoration: none;
+      color: white;
+   }
+
+   a:hover {
+      color: wheat;
+   }
+
+   #intro {
+      padding-top: 200px;
+   }
+</style>
+
 <body>
-   <h2>깃허브 블로그</h2>
-   <a href="save.html">회원가입</a>
-   <button onclick="goLogin()">로그인</button>
-   <button onclick="fun1()">함수호출</button>
+   <!-- header -->
+   <div class="full">
+      <header>
+         <div class="header_container">
+            <nav>
+               <ul id="menu" class="row">
+                  <div class="col">
+                     <li id="menu0"><a href="">INTRO</a></li>
+                  </div>
+                  <div class="col">
+                     <li id="menu1"><a href="">ABOUT</a></li>
+                  </div>
+                  <div class="col">
+                     <li id="menu2"><a href="">STACKS</a></li>
+                  </div>
+                  <div class="col">
+                     <li id="menu3"><a href="">WORKS</a></li>
+                  </div>
+                  <div class="col">
+                     <li id="menu4"><a href="">CONTACT</a></li>
+                  </div>
+                  <div class="col">
+                     <li id="menu5"><a href="sing_in.html">SING IN</a></li>
+                  </div>
+                  <div class="col">
+                     <li id="menu6"><a href="sing_up.html">SING UP</a></li>
+                  </div>
+               </ul>
+            </nav>
+         </div>
+      </header>
+   </div>
+   <!-- fullpage sections -->
+   <div id="fullpage">
+      <!-- intro -->
+      <section id="intro" style="height: 1000px; color: white;  border: 1px solid blue;">
+         <h2>intro입니다.</h2>
+         <p>안녕하세요 </p>
+      </section>
+      <!-- about me -->
+      <section id="about_me" style="height: 1000px; color: white;">
+         <h2>about입니다.</h2>
+      </section>
+      <section id="stacks" style="height: 1000px; color: white;">
+         <h2>stacks입니다.</h2>
+      </section>
+      <section id="works" style="height: 1000px; color: white;">
+         <h2>works입니다.</h2>
+      </section>
+      <section id="contact" style="height: 1000px; color: white;">
+         <h2>contact입니다.</h2>
+      </section>
+   </div>
+   </div>
 </body>
 <script>
-   const goLogin = () => {
-      location.href = "login.html";
+   const sign_in = () => {
+      location.href = "login.html"
+   }
+   const sign_up = () => {
+      location.href = "save.html"
    }
 </script>
+
 </html>

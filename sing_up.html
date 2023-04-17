@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+   <link rel="stylesheet" href="../css/bootstrap.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+   <script src="../js/bootstrap.bundle.min.js"></script>
+
+</head>
+<style>
+   * {
+      font-family: 'Jua', sans-serif;
+      font-size: 15px;
+
+   }
+
+   *:has(.container) {
+      background-color: rgb(33, 33, 33);
+   }
+
+   .container {
+      width: 600px;
+      color: rgba(255, 255, 255);
+   }
+
+   #signUp {
+      width: 580px;
+      text-align: center;
+      
+   }
+
+
+   .input {
+      position: relative;
+      
+      
+   }
+
+   #ch {
+      position: absolute;
+      font-size: 22px;
+      top: 3px;
+      right: 10px;
+      color: green;
+      display: none;
+   }
+
+   #ex {
+      position: absolute;
+      font-size: 23px;
+      top: 3px;
+      right: 8px;
+      color: red;
+      display: none;
+   }
+
+   #ch2 {
+      position: absolute;
+      font-size: 22px;
+      top: 3px;
+      right: 10px;
+      color: green;
+      display: none;
+   }
+
+   #ex2 {
+      position: absolute;
+      font-size: 23px;
+      top: 3px;
+      right: 8px;
+      color: red;
+      display: none;
+   }
+
+   #ch3 {
+      position: absolute;
+      font-size: 22px;
+      top: 3px;
+      right: 10px;
+      color: green;
+      display: none;
+   }
+
+   #ex3 {
+      position: absolute;
+      font-size: 23px;
+      top: 3px;
+      right: 8px;
+      color: red;
+      display: none;
+   }
+
+   #ch4 {
+      position: absolute;
+      font-size: 22px;
+      top: 3px;
+      right: 10px;
+      color: green;
+      display: none;
+   }
+
+   #ex4 {
+      position: absolute;
+      font-size: 23px;
+      top: 3px;
+      right: 8px;
+      color: red;
+      display: none;
+   }
+
+   #ch5 {
+      position: absolute;
+      font-size: 22px;
+      top: 3px;
+      right: 10px;
+      color: green;
+      display: none;
+   }
+
+   #ex5 {
+      position: absolute;
+      font-size: 23px;
+      top: 3px;
+      right: 8px;
+      color: red;
+      display: none;
+   }
+</style>
+
+<body>
+
+   <div id="save_form" class="container">
+      <h1 class="text-sm-center mt-5 mb-5">회원가입</h1>
+      <label for="id">아이디</label> <br>
+      <div class="input">
+         <input type="text" id="id"
+            class="form-control mb-4 mt-2 border border-primary rounded-3 bi bi-check-lg border border-2"
+            onblur="id_check()" placeholder="아이디를 입력해 주세요">
+         <i id="ch" class="bi bi-check-lg"></i>
+         <i id="ex" class="bi bi-exclamation-lg"></i>
+      </div>
+      <h6 id="id-check"></h6>
+
+      <label for="password">비밀번호</label> <br>
+      <div class="input">
+         <input type="password" id="password"
+            class="form-control mb-4 rounded border border-primary rounded-3 border border-2" onblur="password_check()"
+            placeholder="비밀번호를 입력해 주세요">
+         <i id="ch2" class="bi bi-check-lg"></i>
+         <i id="ex2" class="bi bi-exclamation-lg"></i>
+      </div>
+      <h6 id="password-check"></h6>
+
+      <label for="password2">비밀번호확인</label> <br>
+      <div class="input">
+         <input type="password2" id="password2"
+            class="form-control mb-4 rounded border border-primary rounded-3 border border-2" onblur="password_check2()"
+            placeholder="비밀번호를 입력해 주세요">
+         <i id="ch3" class="bi bi-check-lg"></i>
+         <i id="ex3" class="bi bi-exclamation-lg"></i>
+      </div>
+      <h6 id="password-check2"></h6>
+
+      <label for="name">이름</label> <br>
+      <div class="input">
+         <input type="text" id="name" class="form-control mb-4 rounded border border-primary rounded-3 border border-2"
+            onblur="name_check()" placeholder="이름을 입력해 주세요">
+         <i id="ch4" class="bi bi-check-lg"></i>
+         <i id="ex4" class="bi bi-exclamation-lg"></i>
+      </div>
+      <h6 id="nameCheck"></h6>
+
+      <label for="mobile">전화번호</label> <br>
+      <div class="row">
+         <div id="tel1" class="col-md-2 ">
+            <select name="mobile-carrier" id="mobile-carrier"
+               class="form-select rounded rounded border border-primary rounded-3 border border-2">
+               <option value="SKT">SKT</option>
+               <option value="LG">LG</option>
+               <option value="KT">KT</option>
+               <option value="MVNO">MVNO</option>
+            </select>
+         </div>
+         <div class="col-md-6">
+            <div class="input">
+               <input type="tel" id="mobile" onblur="mobile_check()"
+                  class="form-control rounded rounded border border-primary rounded-3 border border-2"
+                  placeholder="전화번호를 입력해 주세요">
+               <i id="ch5" class="bi bi-check-lg"></i>
+               <i id="ex5" class="bi bi-exclamation-lg"></i>
+            </div>
+         </div>
+         <div class="col ms-3 mb-4">
+            <input type="submit" value="인증번호 받기" class="btn btn-primary rounded rounded-3 ">
+         </div>
+         <h6 id="mobileCheck"></h6>
+      </div>
+      <div class="row">
+         <div class="col-md-8">
+            <input type="text" id="cn" class="form-control rounded rounded border border-primary rounded-3 border border-2">
+         </div>
+         <div class="col ms-3 mb-4">
+            <button id="cn2" onclick="cn()" class="btn btn-primary rounded rounded-3">인증번호 확인</button>
+         </div>
+      </div>
+      <label for="email">이메일</label> <br>
+      <div class="row">
+         <div class="col">
+            <input type="text" id="email"
+               class="form-control rounded rounded border border-primary rounded-3 border border-2"
+               placeholder="이메일을 입력해 주세요">
+         </div>
+         @
+         <div class="col">
+            <input type="text" id="email-domain"
+               class="form-control rounded rounded border border-primary rounded-3 border border-2"
+               placeholder="도메인을 입력해 주세요">
+         </div>
+         <div class="col-md-3">
+            <select id="email-domain-select"
+               class="form-select mb-1 rounded rounded border border-primary rounded-3 border border-2"
+               onchange="domain_select()">
+               <option value="">직접입력</option>
+               <option value="naver.com">네이버</option>
+               <option value="daum.net">다음</option>
+               <option value="gmail.com">지메일</option>
+            </select> <br>
+         </div>
+
+      </div>
+
+      <label for="radio" class="form-check-label">성별</label> <br>
+      <div class="form-check form-check-inline">
+         <input class="form-check-input border border-primary border border-2" type="radio" name="inlineRadioOptions"
+            id="inlineRadio1" value="option1">
+         <label class="form-check-label" for="inlineRadio1 ">남자</label>
+      </div>
+      <div class="form-check form-check-inline">
+         <input class="form-check-input border border-primary border border-2" type="radio" name="inlineRadioOptions"
+            id="inlineRadio2" value="option2">
+         <label class="form-check-label" for="inlineRadio2">여자</label>
+      </div>
+
+
+
+      <div class="row">
+         <div class="col mt-5 mb-3">
+            <input type="text" id="sample6_postcode"
+               class="form-control rounded rounded border border-primary rounded-3 border border-2" placeholder="우편번호">
+         </div>
+         <div class="col mt-5">
+            <input type="button" onclick="sample6_execDaumPostcode()" class="btn btn-primary rounded rounded-3"
+               value="우편번호 찾기"><br>
+         </div>
+      </div>
+      <input type="text" id="sample6_address"
+         class="form-control mb-3 rounded rounded border border-primary rounded-3 border border-2" placeholder="주소">
+      <div class="row">
+         <div class="col">
+            <input type="text" id="sample6_detailAddress"
+               class="form-control rounded rounded border border-primary rounded-3 border border-2" placeholder="상세주소">
+         </div>
+         <div class="col">
+            <input type="text" id="sample6_extraAddress"
+               class="form-control rounded rounded border border-primary rounded-3 border border-2" placeholder="참고항목">
+         </div>
+      </div>
+
+      <div class="row mt-5">
+         <form action="#" name="loginForm" method="post" onsubmit="return sign_check()">
+            <input type="submit" id="signUp" class="btn btn-primary mt-5 mb-5" value="가입하기">
+         </form>
+      </div>
+   </div>
+</body>
+<script>
+
+   const sign_check = () => {
+      const id = document.getElementById("id");
+      const password = document.getElementById("password");
+      const password2 = document.getElementById("password2");
+      const name = document.getElementById("name");
+      const mobile = document.getElementById("mobile");
+
+      if (!id_check()) {
+         id.focus();
+         return false;
+      } else if (!password_check()) {
+         password.focus();
+         return false;
+      } else if (!password_check2()) {
+         password2.focus();
+         return false;
+      } else if (!name_check()) {
+         name.focus();
+         return false;
+      } else if (!mobile_check()) {
+         mobile.focus();
+         return false;
+      } else {
+         return true;
+      }
+   }
+
+
+   const id_check = () => {
+      const id = document.getElementById("id").value;
+      const exp = /^(?=.*[a-z])(?=.*[\d])[a-z\d-_]{5,10}$/;
+      const idCheck = document.getElementById("id-check");
+      const ch = document.getElementById("ch");
+      const ex = document.getElementById("ex");
+
+      if (id.length == 0) {
+         idCheck.innerHTML = "필수정보입니다.";
+         idCheck.style.color = "red";
+         ex.style.display = "block";
+         ch.style.display = "none";
+         return false;
+      } else if (id.match(exp)) {
+         idCheck.innerHTML = "멋진 아이디입니다.";
+         idCheck.style.color = "green";
+         ch.style.display = "block";
+         ex.style.display = "none";
+         return true;
+      } else {
+         idCheck.innerHTML = "5~10자 영문 소문자, 숫자를 사용하세요 (특수문자는 -_만 가능합니다.).";
+         idCheck.style.color = "red";
+         ex.style.display = "block";
+         ch.style.display = "none";
+
+         return false;
+      }
+   }
+
+   const password_check = () => {
+      const password = document.getElementById("password").value;
+      const exp = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])(?=.*[-_$!#])[A-Za-z\d-_$!#]{6,18}$/;
+      const passwordCheck = document.getElementById("password-check");
+      const ch2 = document.getElementById("ch2");
+      const ex2 = document.getElementById("ex2");
+      if (password.length == 0) {
+         passwordCheck.innerHTML = "필수정보입니다.";
+         passwordCheck.style.color = "red";
+         ex2.style.display = "block";
+         ch2.style.display = "none";
+         return false;
+      } else if (password.match(exp)) {
+         passwordCheck.innerHTML = "멋진 비밀번호입니다.";
+         passwordCheck.style.color = "green";
+         ch2.style.display = "block";
+         ex2.style.display = "none";
+         return true;
+      } else {
+         passwordCheck.innerHTML = "8~16자 영문 대문자, 소문자, 숫자,특수문자(-_$!#)를 사용하세요";
+         passwordCheck.style.color = "red";
+         ex2.style.display = "block";
+         ch2.style.display = "none";
+         return false;
+      }
+   }
+
+   const password_check2 = () => {
+      const password = document.getElementById("password").value;
+      const password2 = document.getElementById("password2").value;
+      const passwordCheck2 = document.getElementById("password-check2");
+      const ch3 = document.getElementById("ch3");
+      const ex3 = document.getElementById("ex3");
+
+      if (password2.length == 0) {
+         passwordCheck2.innerHTML = "필수정보입니다.";
+         passwordCheck2.style.color = "red";
+         ex3.style.display = "block";
+         ch3.style.display = "none";
+         return false;
+      } else if (password === password2) {
+         passwordCheck2.innerHTML = "비밀번호가 일치합니다.";
+         passwordCheck2.style.color = "green";
+         ch3.style.display = "block";
+         ex3.style.display = "none";
+         return true;
+      } else {
+         passwordCheck2.innerHTML = "비밀번호가 일치하지 않습니다.";
+         passwordCheck2.style.color = "red";
+         ex3.style.display = "block";
+         ch3.style.display = "none";
+         return false;
+      }
+   }
+
+   const name_check = () => {
+      const name = document.getElementById("name").value;
+      const nameCheck = document.getElementById("nameCheck");
+      const ch4 = document.getElementById("ch4");
+      const ex4 = document.getElementById("ex4");
+
+      if (name.length == 0) {
+         nameCheck.innerHTML = "필수정보입니다.";
+         nameCheck.style.color = "red";
+         ex4.style.display = "block";
+         ch4.style.display = "none";
+         return false;
+      } else {
+         nameCheck.innerHTML = "멋진 이름입니다.";
+         nameCheck.style.color = "green";
+         ch4.style.display = "block";
+         ex4.style.display = "none";
+         return true;
+      }
+   }
+
+   const mobile_check = () => {
+      const mobile = document.getElementById("mobile").value;
+      const mobileCheck = document.getElementById("mobileCheck");
+      const exp = /^\d{3}-\d{4}-\d{4}$/
+      const ch5 = document.getElementById("ch5");
+      const ex5 = document.getElementById("ex5");
+
+      if (mobile == 0) {
+         mobileCheck.innerHTML = "필수정보입니다.";
+         mobileCheck.style.color = "red";
+         ex5.style.display = "block";
+         ch5.style.display = "none";
+         return false;
+      } else if (!mobile.match(exp)) {
+         mobileCheck.innerHTML = "휴대폰 번호형식은 010-0000-0000 로 입력해주세요";
+         mobileCheck.style.color = "red";
+         ex5.style.display = "block";
+         ch5.style.display = "none";
+         return false;
+      } else {
+         mobileCheck.innerHTML = "";
+         ch5.style.display = "block";
+         ex5.style.display = "none";
+         return true;
+      }
+   }
+
+   const cn = () => {
+      const cn = document.getElementById("cn");
+      const cn2 = document.getElementById("c2");
+   }
+
+   const domain_select = () => {
+      const emailDomain = document.getElementById("email-domain");
+      const emailDomainSelct = document.getElementById("email-domain-select");
+      emailDomain.value = emailDomainSelct.value;
+   }
+
+   function sample6_execDaumPostcode() {
+      new daum.Postcode({
+         oncomplete: function (data) {
+            var addr = '';
+            var extraAddr = '';
+            if (data.userSelectedType === 'R') {
+               addr = data.roadAddress;
+            } else {
+               addr = data.jibunAddress;
+            }
+            if (data.userSelectedType === 'R') {
+               if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+                  extraAddr += data.bname;
+               }
+               if (data.buildingName !== '' && data.apartment === 'Y') {
+                  extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+               }
+               if (extraAddr !== '') {
+                  extraAddr = ' (' + extraAddr + ')';
+               }
+               document.getElementById("sample6_extraAddress").value = extraAddr;
+            } else {
+               document.getElementById("sample6_extraAddress").value = '';
+            }
+            document.getElementById('sample6_postcode').value = data.zonecode;
+            document.getElementById("sample6_address").value = addr;
+            document.getElementById("sample6_detailAddress").focus();
+         }
+      }).open();
+   }
+
+
+
+</script>
+
+</html>
