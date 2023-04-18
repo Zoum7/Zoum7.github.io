@@ -16,29 +16,23 @@
 
 </head>
 <style>
-   *:has(.full) {
+   body {
       background-color: rgb(33, 33, 33);
       font-family: 'Jua', sans-serif;
       text-align: center;
-      width: 1200px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-   }
-   
 
-   body {
-      width: 100vw;
-      height: 100vh;
-      margin: 0;
+   }
+
+   header {
+      font-size: 22px;
+      padding-top: 30px;
+      position: fixed;
+      width: 100%;
+
    }
 
    #menu {
-      font-size: 22px;
       list-style: none;
-      top: 0;
-      padding-top: 50px;
    }
 
    a {
@@ -46,78 +40,194 @@
       color: white;
    }
 
-   a:hover {
+   #menu0{
       color: wheat;
    }
 
-   #intro {
-      padding-top: 200px;
+   #menu5:hover, #menu6:hover{
+      color: wheat;
+   }
+
+   #about {
+      padding-top: 130px;
+   } 
+
+   .p1 {
+      font-size: 90px;
+      display: inline;
+   }
+
+   .p2 {
+      font-size: 50px;
+      display: inline;
+   }
+
+   .p3 {
+      font-size: 70px;
+      display: inline;
+   }
+
+   .p4 {
+      font-size: 90px;
+      display: inline;
    }
 </style>
 
 <body>
    <!-- header -->
-   <div class="full">
-      <header>
-         <div class="header_container">
-            <nav>
-               <ul id="menu" class="row">
-                  <div class="col">
-                     <li id="menu0"><a href="">INTRO</a></li>
-                  </div>
-                  <div class="col">
-                     <li id="menu1"><a href="">ABOUT</a></li>
-                  </div>
-                  <div class="col">
-                     <li id="menu2"><a href="">STACKS</a></li>
-                  </div>
-                  <div class="col">
-                     <li id="menu3"><a href="">WORKS</a></li>
-                  </div>
-                  <div class="col">
-                     <li id="menu4"><a href="">CONTACT</a></li>
-                  </div>
-                  <div class="col">
-                     <li id="menu5"><a href="sing_in.html">SING IN</a></li>
-                  </div>
-                  <div class="col">
-                     <li id="menu6"><a href="sing_up.html">SING UP</a></li>
-                  </div>
-               </ul>
-            </nav>
-         </div>
-      </header>
+   <header>
+      <div id="header_container" class="header_container" style="position: relative;">
+         <nav>
+            <ul id="menu" class="row me-3">
+               <div class="col">
+                  <li><a id="menu0" href="#intro" style="font-size: 20px; text-shadow: 5px 5px 5px black; position: absolute; left: 50px;">INTRO</a></li>
+               </div>
+               <div class="col">
+                  <li><a id="menu1" href="#about" style="font-size: 20px; text-shadow: 5px 5px 5px black; position: absolute; left: 150px;">ABOUT</a></li>
+               </div>
+               <div class="col">
+                  <li><a id="menu2" href="#stacks" style="font-size: 20px; text-shadow: 5px 5px 5px black; position: absolute; left: 250px;">STACKS</a></li>
+               </div>
+               <div class="col">
+                  <li><a id="menu3" href="#works" style="font-size: 20px; text-shadow: 5px 5px 5px black; position: absolute; left: 350px;">WORKS</a></li>
+               </div>
+               <div class="col">
+                  <li><a id="menu4" href="#contact" style="font-size: 20px; text-shadow: 5px 5px 5px black; position: absolute; left: 450px;">CONTACT</a></li>
+               </div>
+               <div class="col">
+                  <li><a id="menu5" href="sing_in.html" style="font-size: 17px; text-shadow: 5px 5px 5px black; position: absolute; top: 30px; right: 150px;">SIGN IN</a></li>
+               </div>
+               <div class="col">
+                  <li><a id="menu6" href="sing_up.html" style="font-size: 17px; text-shadow: 5px 5px 5px black; position: absolute; top: 30px; right: 50px;">SIGN UP</a></li>
+               </div>
+            </ul>
+         </nav>
+      </div>
+   </header>
    </div>
    <!-- fullpage sections -->
    <div id="fullpage">
       <!-- intro -->
-      <section id="intro" style="height: 1000px; color: white;  border: 1px solid blue;">
-         <h2>intro입니다.</h2>
-         <p>안녕하세요 </p>
-      </section>
-      <!-- about me -->
-      <section id="about_me" style="height: 1000px; color: white;">
-         <h2>about입니다.</h2>
-      </section>
-      <section id="stacks" style="height: 1000px; color: white;">
-         <h2>stacks입니다.</h2>
-      </section>
-      <section id="works" style="height: 1000px; color: white;">
-         <h2>works입니다.</h2>
-      </section>
-      <section id="contact" style="height: 1000px; color: white;">
-         <h2>contact입니다.</h2>
-      </section>
+      <section id="intro" style="height: 1000px; color: white; padding-top: 350px; background-image: url(images/3.gif); background-size: cover;">
+         <p class="p1">WEICOME </p>
+
+         <p class="p2">TO</p> <br>
+         <p class="p3">MY </p>
+         <p class="p4">PORTFOLIO</p>
    </div>
+   </section>
+   <!-- about me -->
+   <section id="about" style="height: 1000px; color: white; ">
+      <h2 style="font-size: 50px; text-shadow: 5px 5px 5px black;">ABOUT</h2>
+   </section>
+
+   <section id="stacks" style="height: 1300px; color: white; background-image: url(images/Frame_1.jpg);">
+      <strong style="font-size: 50px; text-shadow: 5px 5px 5px black; position: relative; top: 100px;">TECH STACK</strong>
+      <div class="row" style="margin-top: 150px;">
+         <div id="language" class="col" style="position:absolute; right: 500px; top: 2400px;">
+            <i class="bi bi-globe2" style="font-size: 40px; display: inline;">
+               <span style="font-size: 35px; display: inline; text-shadow: 5px 5px black;">LANGUAGE</span>
+            </i>
+            <p style="font-size: 20px; margin-top: 30px; margin-left: 20px; text-shadow: 5px 5px black;">JAVA</p>
+            <p style="font-size: 20px; margin-left: 20px; text-shadow: 5px 5px black;">SQL</p>
+         </div>
+         <div id="fontend" class="col" style="position:absolute; right: 0; top: 2400px;">
+            <i class="bi bi-display" style="font-size: 40px; display: inline;">
+               <p style="font-size: 35px; display: inline; text-shadow: 5px 5px black;">FRONTEND</p>
+            </i>
+            <p style="font-size: 20px; margin-top: 30px; margin-left: 35px; text-shadow: 5px 5px black;">HTML</p>
+            <p style="font-size: 20px; margin-left: 35px; text-shadow: 5px 5px black;">CSS</p>
+            <p style="font-size: 20px; margin-left: 35px; text-shadow: 5px 5px black;">JAVASCRIPT</p>
+            <p style="font-size: 20px; margin-left: 35px; text-shadow: 5px 5px black;">BOOTSTRAP</p>
+         </div>
+         <div id="language" class="col" style="position:absolute; left: 500px; top: 2400px;">
+            <i class="bi bi-pc-display" style="font-size: 34px; display: inline;">
+               <p style="font-size: 35px; display: inline; text-shadow: 5px 5px black;">BACKEND</p>
+            </i>
+            <p style="font-size: 20px; margin-top: 30px; margin-left: 35px; text-shadow: 5px 5px black;">SPRING</p>
+         </div>
+      </div>
+
+      <div class="row">
+         <div id="language" class="col" style="position:absolute; right: 500px; top: 2900px;">
+            <i class="bi bi-database" style="font-size: 40px; display: inline;">
+               <span style="font-size: 35px; display: inline; text-shadow: 5px 5px black;">DATABASE</span>
+            </i>
+            <p style="font-size: 20px; margin-top: 30px; margin-left: 20px; text-shadow: 5px 5px black;">MYSQL</p>
+         </div>
+         <div id="fontend" class="col" style="position:absolute; right:0; top: 2900px;">
+            <i class="bi bi-cloud" style="font-size: 40px; display: inline;">
+               <p style="font-size: 35px; display: inline; text-shadow: 5px 5px black;">CLOUD</p>
+            </i>
+            
+         </div>
+         <div id="language" class="col" style="position:absolute; left: 500px; top: 2900px;">
+            <i class="bi bi-gear" style="font-size: 40px; display: inline;">
+               <p style="font-size: 35px; display: inline; text-shadow: 5px 5px black;">TOOL</p>
+            </i>
+            <p style="font-size: 20px; margin-top: 30px; margin-left: 35px; text-shadow: 5px 5px black;">ECLIPSE</p>
+            <p style="font-size: 20px; margin-left: 35px; text-shadow: 5px 5px black;">VSCODE</p>
+            <p style="font-size: 20px; margin-left: 35px; text-shadow: 5px 5px black;">GITHUB</p>
+         </div>
+      </div>
+   </section>
+   <section id="works" style="height: 1200px; color: white;">
+      <p style="font-size: 50px; text-shadow: 5px 5px 5px black;">WORKS
+      <p>
+   </section>
+   <section id="contact" style="height: 1200px; color: white;">
+      <h2 style="font-size: 50px; text-shadow: 5px 5px 5px black;">CONTACT</h2>
+   </section>
    </div>
 </body>
 <script>
+
+   window.addEventListener('scroll', function () {
+      const intro = document.getElementById("intro");
+      const menu0 = document.getElementById("menu0");
+      const menu1 = document.getElementById("menu1");
+      const menu2 = document.getElementById("menu2");
+      const menu3 = document.getElementById("menu3");
+      const menu4 = document.getElementById("menu4");
+
+      if (window.scrollY < 1000) {
+         menu0.style.color = "wheat";
+      } else {
+         menu0.style.color = "white";
+      }
+
+      if (window.scrollY >= 1000 && window.scrollY < 2000) {
+         menu1.style.color = "wheat";
+      } else {
+         menu1.style.color = "white";
+      }
+
+      if (window.scrollY >= 2000 && window.scrollY < 3300) {
+         menu2.style.color = "wheat";
+      } else {
+         menu2.style.color = "white";
+      }
+
+      if (window.scrollY >= 3300 && window.scrollY < 4500) {
+         menu3.style.color = "wheat";
+      } else {
+         menu3.style.color = "white";
+      }
+
+      if (window.scrollY >= 4500 && window.scrollY < 5700) {
+         menu4.style.color = "wheat";
+      } else {
+         menu4.style.color = "white";
+      }
+
+   });
+
    const sign_in = () => {
       location.href = "login.html"
-   }
+   };
    const sign_up = () => {
       location.href = "save.html"
-   }
+   };
 </script>
 
 </html>
